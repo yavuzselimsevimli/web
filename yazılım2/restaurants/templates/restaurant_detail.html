@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ mekan.name }}</h2>
+    
+    <ul>
+        <li><strong>Kategori:</strong> {{ mekan.category.name }}</li>
+        <li><strong>Fiyat Aralığı:</strong> {{ mekan.price_range }}</li>
+        <li><strong>Telefon:</strong> {{ mekan.phone }}</li>
+        <li><strong>Açık Adres:</strong> {{ mekan.address }}</li>
+    </ul>
+
+    <hr>
+    
+    <h3>Hakkında</h3>
+    <p>{{ mekan.description }}</p>
+
+    <hr>
+    
+    <a href="{% url 'restaurant_list' %}">← Restoran Listesine Geri Dön</a>
+{% endblock %}

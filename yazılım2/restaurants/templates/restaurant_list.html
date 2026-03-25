@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>FlavorMap Restoranları</h2>
+    
+    <ul>
+        {% for mekan in restoranlar %}
+            <li>
+                <h3>{{ mekan.name }} ({{ mekan.category.name }})</h3>
+                <p><strong>Fiyat:</strong> {{ mekan.price_range }} | <strong>Telefon:</strong> {{ mekan.phone }}</p>
+                <p>{{ mekan.description }}</p>
+                <a href="{% url 'restaurant_detail' mekan.id %}">Detayları Gör</a>
+                <hr>
+            </li>
+        {% empty %}
+            <li>Henüz hiç restoran eklenmemiş. Lütfen Admin panelinden restoran ekleyin.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

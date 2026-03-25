@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlavorMap</title>
+</head>
+<body>
+    <nav>
+        <h1>FlavorMap</h1>
+        <a href="{% url 'home' %}">Ana Sayfa</a>
+        <a href="{% url 'restaurant_list' %}">Restoranlar</a>
+        <a href="{% url 'about' %}">Hakkında</a>
+        <a href="{% url 'contact' %}">İletişim</a>
+    </nav>
+
+    <hr>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 FlavorMap Projesi</p>
+    </footer>
+</body>
+</html>
